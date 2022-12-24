@@ -48,6 +48,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
 void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
 	size_t j = *p;
+
 	if (info->cmd_buf_type == CMD_AND)
 	{
 		if (info->status)
@@ -107,6 +108,7 @@ int replace_vars(info_t *info)
 {
 	int i = 0;
 	list_t *node;
+
 	for (i = 0; info->argv[i]; i++)
 	{
 		if (info->argv[i][0] != '$' || !info->argv[i][1])
@@ -144,7 +146,7 @@ int replace_vars(info_t *info)
  * replace_string - replaces string
  * @old: address of old string
  * @new: new string
- * 
+ *
  * Return: 1 if replaced, 0 otherwise
  */
 int replace_string(char **old, char *new)
